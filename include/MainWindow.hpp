@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_HPP
-#define MAINWINDOW_HPP
+#ifndef MAIN_WINDOW_HPP
+#define MAIN_WINDOW_HPP
 
 #include <QMainWindow>
 #include <QTimer>
@@ -7,7 +7,7 @@
 #include "Sudoku.hpp"
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 /**
@@ -23,15 +23,15 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 private:
-    std::unique_ptr<Ui::MainWindow> ui_;  ///< UI pointer (from .ui file)
+    std::unique_ptr<Ui::MainWindow> ui_; ///< UI pointer (from .ui file)
 
     // Solving logic
-    QTimer *animTimer_{nullptr};                    ///< Animation timer (60 FPS)
-    std::vector<SolveStep> solveSteps_;             ///< Recorded solving steps
-    size_t currentStep_{0};                         ///< Current step in animation
+    QTimer *animTimer_{nullptr}; ///< Animation timer (60 FPS)
+    std::vector<SolveStep> solveSteps_; ///< Recorded solving steps
+    size_t currentStep_{0}; ///< Current step in animation
 
     // Puzzle collection
-    static const std::vector<std::vector<std::vector<int>>> PUZZLES;  ///< Example puzzles
+    static const std::vector<std::vector<std::vector<int> > > PUZZLES; ///< Example puzzles
 
     /**
      * @brief Solve current puzzle instantly
@@ -71,5 +71,5 @@ public:
     ~MainWindow() override;
 };
 
-#endif // MAINWINDOW_HPP
+#endif // MAIN_WINDOW_HPP
 

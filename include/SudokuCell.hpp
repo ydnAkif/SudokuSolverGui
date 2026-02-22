@@ -1,5 +1,5 @@
-#ifndef SUDOKUCELL_HPP
-#define SUDOKUCELL_HPP
+#ifndef SUDOKU_CELL_HPP
+#define SUDOKU_CELL_HPP
 
 #include <QWidget>
 
@@ -8,12 +8,12 @@
  * @brief Represents the state of a Sudoku cell
  */
 enum class CellState {
-    Empty,      ///< Cell is empty (0)
-    Given,      ///< Cell was given in initial puzzle
-    UserInput,  ///< Cell value entered by user
-    Solved,     ///< Cell value computed by solver
-    Backtrack,  ///< Cell was removed during backtracking
-    Invalid     ///< Cell contains invalid value (future use)
+    Empty, ///< Cell is empty (0)
+    Given, ///< Cell was given in initial puzzle
+    UserInput, ///< Cell value entered by user
+    Solved, ///< Cell value computed by solver
+    Backtrack, ///< Cell was removed during backtracking
+    Invalid ///< Cell contains invalid value (future use)
 };
 
 /**
@@ -28,12 +28,12 @@ enum class CellState {
 class SudokuCell : public QWidget {
     Q_OBJECT
 
-    int row_;           ///< Row index (0-8)
-    int col_;           ///< Column index (0-8)
-    int value_;         ///< Cell value (0-9)
-    CellState state_;   ///< Current cell state
-    bool selected_;     ///< Is cell selected by user
-    bool highlighted_;  ///< Is cell highlighted (same row/col/box)
+    int row_; ///< Row index (0-8)
+    int col_; ///< Column index (0-8)
+    int value_; ///< Cell value (0-9)
+    CellState state_; ///< Current cell state
+    bool selected_; ///< Is cell selected by user
+    bool highlighted_; ///< Is cell highlighted (same row/col/box)
 
 protected:
     /**
@@ -100,5 +100,5 @@ signals:
     void cellClicked(int row, int col);
 };
 
-#endif // SUDOKUCELL_HPP
+#endif // SUDOKU_CELL_HPP
 

@@ -15,62 +15,53 @@ const std::vector<std::vector<std::vector<int>>> MainWindow::PUZZLES = {
         {0, 0, 0, 1, 0, 0, 0, 3, 0},
         {0, 0, 1, 0, 0, 0, 0, 6, 8},
         {0, 0, 8, 5, 0, 0, 0, 1, 0},
-        {0, 9, 0, 0, 0, 0, 4, 0, 0}
-    },
-    {
-        {5, 3, 0, 0, 7, 0, 0, 0, 0},
-        {6, 0, 0, 1, 9, 5, 0, 0, 0},
-        {0, 9, 8, 0, 0, 0, 0, 6, 0},
-        {8, 0, 0, 0, 6, 0, 0, 0, 3},
-        {4, 0, 0, 8, 0, 3, 0, 0, 1},
-        {7, 0, 0, 0, 2, 0, 0, 0, 6},
-        {0, 6, 0, 0, 0, 0, 2, 8, 0},
-        {0, 0, 0, 4, 1, 9, 0, 0, 5},
-        {0, 0, 0, 0, 8, 0, 0, 7, 9}
-    },
-    {
-        {0, 0, 0, 2, 6, 0, 7, 0, 1},
-        {6, 8, 0, 0, 7, 0, 0, 9, 0},
-        {1, 9, 0, 0, 0, 4, 5, 0, 0},
-        {8, 2, 0, 1, 0, 0, 0, 4, 0},
-        {0, 0, 4, 6, 0, 2, 9, 0, 0},
-        {0, 5, 0, 0, 0, 3, 0, 2, 8},
-        {0, 0, 9, 3, 0, 0, 0, 7, 4},
-        {0, 4, 0, 0, 5, 0, 0, 3, 6},
-        {7, 0, 3, 0, 1, 8, 0, 0, 0}
-    },
-    {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 3, 0, 8, 5},
-        {0, 0, 1, 0, 2, 0, 0, 0, 0},
-        {0, 0, 0, 5, 0, 7, 0, 0, 0},
-        {0, 0, 4, 0, 0, 0, 1, 0, 0},
-        {0, 9, 0, 0, 0, 0, 0, 0, 0},
-        {5, 0, 0, 0, 0, 0, 0, 7, 3},
-        {0, 0, 2, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 0, 4, 0, 0, 0, 9}
-    },
-    {
-        {0, 2, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 6, 0, 0, 0, 0, 3},
-        {0, 7, 4, 0, 8, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 3, 0, 0, 2},
-        {0, 8, 0, 0, 4, 0, 0, 1, 0},
-        {6, 0, 0, 5, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 1, 0, 7, 8, 0},
-        {5, 0, 0, 0, 0, 9, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 4, 0}
-    }
-};
+        {0, 9, 0, 0, 0, 0, 4, 0, 0}},
+    {{5, 3, 0, 0, 7, 0, 0, 0, 0},
+     {6, 0, 0, 1, 9, 5, 0, 0, 0},
+     {0, 9, 8, 0, 0, 0, 0, 6, 0},
+     {8, 0, 0, 0, 6, 0, 0, 0, 3},
+     {4, 0, 0, 8, 0, 3, 0, 0, 1},
+     {7, 0, 0, 0, 2, 0, 0, 0, 6},
+     {0, 6, 0, 0, 0, 0, 2, 8, 0},
+     {0, 0, 0, 4, 1, 9, 0, 0, 5},
+     {0, 0, 0, 0, 8, 0, 0, 7, 9}},
+    {{0, 0, 0, 2, 6, 0, 7, 0, 1},
+     {6, 8, 0, 0, 7, 0, 0, 9, 0},
+     {1, 9, 0, 0, 0, 4, 5, 0, 0},
+     {8, 2, 0, 1, 0, 0, 0, 4, 0},
+     {0, 0, 4, 6, 0, 2, 9, 0, 0},
+     {0, 5, 0, 0, 0, 3, 0, 2, 8},
+     {0, 0, 9, 3, 0, 0, 0, 7, 4},
+     {0, 4, 0, 0, 5, 0, 0, 3, 6},
+     {7, 0, 3, 0, 1, 8, 0, 0, 0}},
+    {{0, 0, 0, 0, 0, 0, 0, 0, 0},
+     {0, 0, 0, 0, 0, 3, 0, 8, 5},
+     {0, 0, 1, 0, 2, 0, 0, 0, 0},
+     {0, 0, 0, 5, 0, 7, 0, 0, 0},
+     {0, 0, 4, 0, 0, 0, 1, 0, 0},
+     {0, 9, 0, 0, 0, 0, 0, 0, 0},
+     {5, 0, 0, 0, 0, 0, 0, 7, 3},
+     {0, 0, 2, 0, 1, 0, 0, 0, 0},
+     {0, 0, 0, 0, 4, 0, 0, 0, 9}},
+    {{0, 2, 0, 0, 0, 0, 0, 0, 0},
+     {0, 0, 0, 6, 0, 0, 0, 0, 3},
+     {0, 7, 4, 0, 8, 0, 0, 0, 0},
+     {0, 0, 0, 0, 0, 3, 0, 0, 2},
+     {0, 8, 0, 0, 4, 0, 0, 1, 0},
+     {6, 0, 0, 5, 0, 0, 0, 0, 0},
+     {0, 0, 0, 0, 1, 0, 7, 8, 0},
+     {5, 0, 0, 0, 0, 9, 0, 0, 0},
+     {0, 0, 0, 0, 0, 0, 0, 4, 0}}};
 
 // Constructor - Initialize UI and connect signals
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui_(std::make_unique<Ui::MainWindow>()) {
+    : QMainWindow(parent), ui_(std::make_unique<Ui::MainWindow>())
+{
     ui_->setupUi(this);
 
     // Set up animation timer for 60 FPS
     animTimer_ = new QTimer(this);
-    animTimer_->setInterval(16);  // 60 FPS (16ms per frame)
+    animTimer_->setInterval(16); // 60 FPS (16ms per frame)
     connect(animTimer_, &QTimer::timeout, this, &MainWindow::onAnimStep);
 
     // Connect button signals to slots
@@ -84,15 +75,17 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() = default;
 
 // Fast Solve - Instantly solve current puzzle and display result
-void MainWindow::onSolve() const {
+void MainWindow::onSolve() const
+{
     // Stop any running animation
-    if (animTimer_->isActive()) {
+    if (animTimer_->isActive())
+    {
         animTimer_->stop();
-        ui_->animateBtn->setText("🎬  Animasyon");
+        ui_->animateBtn->setText("🎬  Animation");
     }
 
     // Get current board and solve it (const reference to avoid copy)
-    const auto& board = ui_->grid->getCurrentBoard();
+    const auto &board = ui_->grid->getCurrentBoard();
     Sudoku sudoku(board);
 
     // Measure solving time
@@ -101,7 +94,8 @@ void MainWindow::onSolve() const {
     const bool solved = sudoku.solve();
     const qint64 elapsed = et.elapsed();
 
-    if (solved) {
+    if (solved)
+    {
         // Apply solved cells to grid
         for (size_t r = 0; r < 9; ++r)
             for (size_t c = 0; c < 9; ++c)
@@ -113,29 +107,34 @@ void MainWindow::onSolve() const {
             ui_->timeLabel->setText("⏱  < 1 ms");
         else
             ui_->timeLabel->setText(QString("⏱  %1 ms").arg(elapsed));
-        ui_->statusLabel->setText("✅ Çözüldü!");
-    } else {
-        ui_->statusLabel->setText("❌ Çözülemez (girişi kontrol et)");
+        ui_->statusLabel->setText("✅ Solved!");
+    }
+    else
+    {
+        ui_->statusLabel->setText("❌ Unsolvable (check input)");
     }
 }
 
 // Animated Solve - Show step-by-step solving process
-void MainWindow::onAnimate() {
+void MainWindow::onAnimate()
+{
     // If already animating, pause it
-    if (animTimer_->isActive()) {
+    if (animTimer_->isActive())
+    {
         animTimer_->stop();
-        ui_->animateBtn->setText("🎬  Animasyon");
-        ui_->statusLabel->setText("⏸ Duraklatıldı");
+        ui_->animateBtn->setText("🎬  Animation");
+        ui_->statusLabel->setText("⏸ Paused");
         return;
     }
 
     // Get current board and solve with step tracking (const reference)
-    const auto& board = ui_->grid->getCurrentBoard();
+    const auto &board = ui_->grid->getCurrentBoard();
     Sudoku sudoku(board);
 
     const bool solvable = sudoku.solveWithSteps(solveSteps_);
-    if (!solvable) {
-        ui_->statusLabel->setText("❌ Çözülemez");
+    if (!solvable)
+    {
+        ui_->statusLabel->setText("❌ Unsolvable");
         return;
     }
 
@@ -144,33 +143,37 @@ void MainWindow::onAnimate() {
     currentStep_ = 0;
 
     animTimer_->start();
-    ui_->animateBtn->setText("⏹  Durdur");
-    ui_->statusLabel->setText(QString("🎬 Adım: 1/%1").arg(solveSteps_.size()));
+    ui_->animateBtn->setText("⏹  Stop");
+    ui_->statusLabel->setText(QString("🎬 Step: 1/%1").arg(solveSteps_.size()));
 }
 
 // Animation Step - Process next step in animation
-void MainWindow::onAnimStep() {
+void MainWindow::onAnimStep()
+{
     // Check if animation is complete
-    if (currentStep_ >= solveSteps_.size()) {
+    if (currentStep_ >= solveSteps_.size())
+    {
         animTimer_->stop();
         ui_->grid->markSolved();
-        ui_->animateBtn->setText("🎬  Animasyon");
-        ui_->statusLabel->setText("✅ Tamamlandı!");
-        ui_->timeLabel->setText(QString("⏱  %1 adım").arg(solveSteps_.size()));
+        ui_->animateBtn->setText("🎬  Animation");
+        ui_->statusLabel->setText("✅ Completed!");
+        ui_->timeLabel->setText(QString("⏱  %1 steps").arg(solveSteps_.size()));
         return;
     }
 
     // Apply current step
     ui_->grid->applyStep(solveSteps_[currentStep_++]);
-    ui_->statusLabel->setText(QString("🎬 Adım: %1/%2").arg(currentStep_).arg(solveSteps_.size()));
+    ui_->statusLabel->setText(QString("🎬 Step: %1/%2").arg(currentStep_).arg(solveSteps_.size()));
 }
 
 // New Puzzle - Load random example puzzle
-void MainWindow::onNewPuzzle() const {
+void MainWindow::onNewPuzzle() const
+{
     // Stop any running animation
-    if (animTimer_->isActive()) {
+    if (animTimer_->isActive())
+    {
         animTimer_->stop();
-        ui_->animateBtn->setText("🎬  Animasyon");
+        ui_->animateBtn->setText("🎬  Animation");
     }
 
     // Select and load random puzzle
@@ -178,21 +181,22 @@ void MainWindow::onNewPuzzle() const {
     std::uniform_int_distribution<size_t> dist(0, PUZZLES.size() - 1);
     ui_->grid->loadBoard(PUZZLES[dist(rng)]);
 
-    ui_->timeLabel->setText("⏱  Süre: —");
-    ui_->statusLabel->setText("🎲 Yeni puzzle yüklendi");
+    ui_->timeLabel->setText("⏱  Time: —");
+    ui_->statusLabel->setText("🎲 New puzzle loaded");
 }
 
 // Clear - Remove all user inputs (keep given cells)
-void MainWindow::onClear() const {
+void MainWindow::onClear() const
+{
     // Stop any running animation
-    if (animTimer_->isActive()) {
+    if (animTimer_->isActive())
+    {
         animTimer_->stop();
-        ui_->animateBtn->setText("🎬  Animasyon");
+        ui_->animateBtn->setText("🎬  Animation");
     }
 
     // Clear user input
     ui_->grid->clearUserInput();
-    ui_->timeLabel->setText("⏱  Süre: —");
-    ui_->statusLabel->setText("🗑 Girişler temizlendi");
+    ui_->timeLabel->setText("⏱  Time: —");
+    ui_->statusLabel->setText("🗑 Inputs cleared");
 }
-

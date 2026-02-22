@@ -305,7 +305,7 @@ Visual Update
 - Keyboard navigation
 - Mouse selection
 - Highlighting system
-- 506×506 optimal size
+- 540×540 optimal size
 
 #### **SudokuCell.hpp/cpp**
 
@@ -336,21 +336,21 @@ Visual Update
 ### Optimizations Applied
 
 1. **Compiler Level**
-    - `-O3` aggressive optimization
-    - `-march=native` CPU-specific
-    - `-flto` link-time optimization
+   - `-O3` aggressive optimization
+   - `-march=native` CPU-specific
+   - `-flto` link-time optimization
 
 2. **Code Level**
-    - Font caching (static QFont)
-    - Batch UI updates
-    - Vector reserve() for capacity
-    - Efficient grid calculations
+   - Font caching (static QFont)
+   - Batch UI updates
+   - Vector reserve() for capacity
+   - Efficient grid calculations
 
 3. **Qt Level**
-    - Antialiasing disabled (performance)
-    - Opaque paint events
-    - Efficient layouts
-    - Signal optimization
+   - Antialiasing disabled (performance)
+   - Opaque paint events
+   - Efficient layouts
+   - Signal optimization
 
 ---
 
@@ -404,6 +404,7 @@ Strict Flags:         -Wall -Wextra -Wpedantic -Wconversion
 ### Adding New Features
 
 1. **Create new class in `include/`**
+
    ```cpp
    // include/MyFeature.hpp
    class MyFeature {
@@ -416,6 +417,7 @@ Strict Flags:         -Wall -Wextra -Wpedantic -Wconversion
    ```
 
 2. **Implement in `src/`**
+
    ```cpp
    // src/MyFeature.cpp
    void MyFeature::doSomething() {
@@ -424,10 +426,10 @@ Strict Flags:         -Wall -Wextra -Wpedantic -Wconversion
    ```
 
 3. **Add Doxygen comments**
-    - `@class` for class documentation
-    - `@param` for parameters
-    - `@return` for return values
-    - `@details` for implementation details
+   - `@class` for class documentation
+   - `@param` for parameters
+   - `@return` for return values
+   - `@details` for implementation details
 
 4. **Update CMakeLists.txt**
    ```cmake
@@ -691,8 +693,8 @@ cd build && cmake .. && make && ctest --verbose
 
 ## 📊 Code Metrics
 
-| Metric               | Value   | Status           |
-|----------------------|---------|------------------|
+| Metric               | Value   | Status            |
+| -------------------- | ------- | ----------------- |
 | Total Lines (Code)   | ~1,100  | ✅ Optimal        |
 | Header Files         | 4       | ✅ Well organized |
 | Source Files         | 5       | ✅ Modular        |
@@ -926,4 +928,3 @@ Language: English
 Standard: C++23 + Qt6  
 Build System: CMake 4.1+  
 Platform: macOS, Linux, Windows compatible
-

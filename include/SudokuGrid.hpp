@@ -1,5 +1,5 @@
-#ifndef SUDOKUGRID_HPP
-#define SUDOKUGRID_HPP
+#ifndef SUDOKU_GRID_HPP
+#define SUDOKU_GRID_HPP
 
 #include <QWidget>
 #include <array>
@@ -14,25 +14,26 @@
  *   - Manages 81 SudokuCell widgets
  *   - Handles user input (keyboard and mouse)
  *   - Draws grid lines and 3x3 box separators
- *   - Size: 506x506 pixels with optimized layout
+ *   - Size: 540x540 pixels with optimized layout
  */
-class SudokuGrid : public QWidget {
+class SudokuGrid : public QWidget
+{
     Q_OBJECT
 
     // Type alias for cell array
-    using CellArray = std::array<std::array<SudokuCell*, 9>, 9>;
+    using CellArray = std::array<std::array<SudokuCell *, 9>, 9>;
 
     // Constants for layout
-    static constexpr int CELL_SIZE = 56;       ///< Each cell size in pixels
-    static constexpr int THIN_GAP = 2;         ///< Gap between cells
-    static constexpr int THICK_GAP = 6;        ///< Gap between 3x3 boxes
-    static constexpr int PADDING = 6;          ///< Outer padding
-    static constexpr int BOX_SPAN = 3 * CELL_SIZE + 2 * THIN_GAP;  ///< 3x3 box width
-    static constexpr int CONTENT = 3 * BOX_SPAN + 2 * THICK_GAP;   ///< Content area
-    static constexpr int WIDGET_SZ = CONTENT + 2 * PADDING;         ///< Total widget size
+    static constexpr int CELL_SIZE = 56;                          ///< Each cell size in pixels
+    static constexpr int THIN_GAP = 2;                            ///< Gap between cells
+    static constexpr int THICK_GAP = 6;                           ///< Gap between 3x3 boxes
+    static constexpr int PADDING = 6;                             ///< Outer padding
+    static constexpr int BOX_SPAN = 3 * CELL_SIZE + 2 * THIN_GAP; ///< 3x3 box width
+    static constexpr int CONTENT = 3 * BOX_SPAN + 2 * THICK_GAP;  ///< Content area
+    static constexpr int WIDGET_SZ = CONTENT + 2 * PADDING;       ///< Total widget size
 
     CellArray cells_{};                          ///< 9x9 grid of cells
-    std::vector<std::vector<int>> initialBoard_;  ///< Initial puzzle (immutable)
+    std::vector<std::vector<int>> initialBoard_; ///< Initial puzzle (immutable)
     int selectedRow_ = -1;                       ///< Currently selected row
     int selectedCol_ = -1;                       ///< Currently selected column
 
@@ -85,7 +86,7 @@ public:
      * @brief Load new puzzle board
      * @param board 9x9 board (0 = empty cell)
      */
-    void loadBoard(const std::vector<std::vector<int>>& board);
+    void loadBoard(const std::vector<std::vector<int>> &board);
 
     /**
      * @brief Apply a single solving step
@@ -118,5 +119,4 @@ private slots:
     void onCellClicked(int row, int col);
 };
 
-#endif // SUDOKUGRID_HPP
-
+#endif // SUDOKU_GRID_HPP

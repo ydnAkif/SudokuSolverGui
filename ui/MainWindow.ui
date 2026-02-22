@@ -12,8 +12,8 @@
         </property>
         <property name="minimumSize">
             <size>
-                <width>500</width>
-                <height>650</height>
+                <width>640</width>
+                <height>780</height>
             </size>
         </property>
         <property name="maximumSize">
@@ -26,11 +26,11 @@
             <string>Sudoku Solver • Qt6</string>
         </property>
         <property name="styleSheet">
-            <string notr="true">/* ── Genel ── */
+            <string notr="true">/* ── General ── */
                 QMainWindow { background-color: #1A1A2E; }
                 QWidget { background-color: #1A1A2E; }
 
-                /* ── Başlık ── */
+                /* ── Title ── */
                 QLabel#titleLabel {
                 color: #E94560;
                 font-size: 28px;
@@ -39,20 +39,20 @@
                 padding: 4px;
                 }
 
-                /* ── Süre etiketi ── */
+                /* ── Time label ── */
                 QLabel#timeLabel {
                 color: #80DEEA;
                 font-size: 15px;
                 }
 
-                /* ── Durum mesajı ── */
+                /* ── Status message ── */
                 QLabel#statusLabel {
                 color: #B0BEC5;
                 font-size: 13px;
                 padding: 4px;
                 }
 
-                /* ── Buton temel stili ── */
+                /* ── Button base style ── */
                 QPushButton {
                 border: 2px solid transparent;
                 border-radius: 10px;
@@ -69,7 +69,7 @@
                 opacity: 0.6;
                 }
 
-                /* ── Çöz Butonu ── */
+                /* ── Solve Button ── */
                 QPushButton#solveBtn {
                 background-color: #1565C0;
                 border-color: #1976D2;
@@ -84,7 +84,7 @@
                 border: 2px inset rgba(0, 0, 0, 0.3);
                 }
 
-                /* ── Animasyon Butonu ── */
+                /* ── Animation Button ── */
                 QPushButton#animateBtn {
                 background-color: #6A1B9A;
                 border-color: #7B1FA2;
@@ -99,7 +99,7 @@
                 border: 2px inset rgba(0, 0, 0, 0.3);
                 }
 
-                /* ── Yeni Puzzle Butonu ── */
+                /* ── New Puzzle Button ── */
                 QPushButton#newPuzzleBtn {
                 background-color: #00695C;
                 border-color: #00796B;
@@ -114,7 +114,7 @@
                 border: 2px inset rgba(0, 0, 0, 0.3);
                 }
 
-                /* ── Temizle Butonu ── */
+                /* ── Clear Button ── */
                 QPushButton#clearBtn {
                 background-color: #B71C1C;
                 border-color: #C62828;
@@ -132,6 +132,9 @@
         </property>
         <widget class="QWidget" name="centralwidget">
             <layout class="QVBoxLayout" name="mainLayout">
+                <property name="sizeConstraint">
+                    <enum>QLayout::SetMinimumSize</enum>
+                </property>
                 <property name="leftMargin">
                     <number>24</number>
                 </property>
@@ -147,7 +150,7 @@
                 <property name="spacing">
                     <number>14</number>
                 </property>
-                <!-- Başlık -->
+                <!-- Title -->
                 <item>
                     <widget class="QLabel" name="titleLabel">
                         <property name="text">
@@ -169,34 +172,34 @@
                         </property>
                         <property name="minimumSize">
                             <size>
-                                <width>506</width>
-                                <height>506</height>
+                                <width>540</width>
+                                <height>540</height>
                             </size>
                         </property>
                         <property name="maximumSize">
                             <size>
-                                <width>506</width>
-                                <height>506</height>
+                                <width>540</width>
+                                <height>540</height>
                             </size>
                         </property>
                     </widget>
                 </item>
-                <!-- Zaman Etiketi -->
+                <!-- Time Label -->
                 <item>
                     <widget class="QLabel" name="timeLabel">
                         <property name="text">
-                            <string>⏱ Süre: —</string>
+                            <string>⏱ Time: —</string>
                         </property>
                         <property name="alignment">
                             <set>Qt::AlignCenter</set>
                         </property>
                     </widget>
                 </item>
-                <!-- Status Etiketi -->
+                <!-- Status Label -->
                 <item>
                     <widget class="QLabel" name="statusLabel">
                         <property name="text">
-                            <string>Hazır</string>
+                            <string>Ready</string>
                         </property>
                         <property name="maximumHeight">
                             <number>40</number>
@@ -209,7 +212,7 @@
                         </property>
                     </widget>
                 </item>
-                <!-- Butonlar -->
+                <!-- Buttons -->
                 <item>
                     <layout class="QHBoxLayout" name="buttonLayout">
                         <property name="spacing">
@@ -221,7 +224,7 @@
                                     <number>46</number>
                                 </property>
                                 <property name="text">
-                                    <string>⚡ Çöz</string>
+                                    <string>⚡ Solve</string>
                                 </property>
                                 <property name="cursor">
                                     <cursorShape>PointingHandCursor</cursorShape>
@@ -234,7 +237,7 @@
                                     <number>46</number>
                                 </property>
                                 <property name="text">
-                                    <string>🎬 Animasyon</string>
+                                    <string>🎬 Animation</string>
                                 </property>
                                 <property name="cursor">
                                     <cursorShape>PointingHandCursor</cursorShape>
@@ -247,7 +250,7 @@
                                     <number>46</number>
                                 </property>
                                 <property name="text">
-                                    <string>🎲 Yeni Puzzle</string>
+                                    <string>🎲 New Puzzle</string>
                                 </property>
                                 <property name="cursor">
                                     <cursorShape>PointingHandCursor</cursorShape>
@@ -260,7 +263,7 @@
                                     <number>46</number>
                                 </property>
                                 <property name="text">
-                                    <string>🗑 Temizle</string>
+                                    <string>🗑 Clear</string>
                                 </property>
                                 <property name="cursor">
                                     <cursorShape>PointingHandCursor</cursorShape>
@@ -280,4 +283,3 @@
         </customwidget>
     </customwidgets>
 </ui>
-

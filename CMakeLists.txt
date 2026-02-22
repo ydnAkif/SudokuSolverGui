@@ -5,15 +5,7 @@ project(SudokuSolverGui LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ────────────────────────────────────────────────────────────────────────────────
-# Performance Optimizations
-# ────────────────────────────────────────────────────────────────────────────────
-if (CMAKE_BUILD_TYPE MATCHES Release)
-    add_compile_options(-O3 -march=native -flto)
-    if (APPLE)
-        add_link_options(-Wl,-dead_strip)
-    endif ()
-endif ()
+
 
 # ────────────────────────────────────────────────────────────────────────────────
 # Qt Configuration
@@ -35,7 +27,6 @@ set(PROJECT_TEST_DIR ${PROJECT_DIR}/tests)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
 
-include_directories(${PROJECT_INCLUDE_DIR})
 
 # ────────────────────────────────────────────────────────────────────────────────
 # Source Files
@@ -59,6 +50,9 @@ set(PROJECT_UI_FILES
         ${PROJECT_UI_DIR}/MainWindow.ui
 )
 
+include_directories(${PROJECT_INCLUDE_DIR})
+
+
 # ────────────────────────────────────────────────────────────────────────────────
 # Main Executable
 # ────────────────────────────────────────────────────────────────────────────────
@@ -68,18 +62,7 @@ add_executable(${PROJECT_NAME}
         ${PROJECT_UI_FILES}
 )
 
-# Compiler warnings for code quality
-if (MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
-else ()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wconversion)
-endif ()
-
-# Standard compliance
-set_target_properties(${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD_REQUIRED ON
-        CXX_EXTENSIONS OFF
-)
+target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_INCLUDE_DIR})
 
 target_link_libraries(${PROJECT_NAME}
         PRIVATE
