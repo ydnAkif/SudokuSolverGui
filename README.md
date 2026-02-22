@@ -8,9 +8,11 @@
 
 ## ✅ PROJECT STATUS: PRODUCTION READY
 
-A professional, high-performance Sudoku solver GUI application built with **C++23** and **Qt6**, featuring fast solving, step-by-step animation, comprehensive documentation, and zero compiler warnings.
+A professional, high-performance Sudoku solver GUI application built with **C++23** and **Qt6**, featuring fast solving,
+step-by-step animation, comprehensive documentation, and zero compiler warnings.
 
 ### 🎯 Quick Stats
+
 - **Language:** C++23
 - **Framework:** Qt6
 - **Build System:** CMake 4.1+
@@ -41,6 +43,7 @@ A professional, high-performance Sudoku solver GUI application built with **C++2
 ## ✨ Features
 
 ### Core Functionality
+
 - ✅ **Fast Sudoku Solver** - Instant solving using backtracking O(9^k)
 - ✅ **Animated Solver** - Step-by-step visualization (60 FPS)
 - ✅ **5 Example Puzzles** - Pre-loaded difficult puzzles
@@ -50,6 +53,7 @@ A professional, high-performance Sudoku solver GUI application built with **C++2
 - ✅ **Time Measurement** - Track solving duration
 
 ### Code Quality
+
 - ✅ **Modern C++23** - Latest language features
 - ✅ **Smart Pointers** - No manual memory management
 - ✅ **RAII Compliance** - Automatic resource cleanup
@@ -59,6 +63,7 @@ A professional, high-performance Sudoku solver GUI application built with **C++2
 - ✅ **Zero Warnings** - Strict compiler checks enabled
 
 ### Architecture
+
 - ✅ **Clean MVC Design** - Separation of concerns
 - ✅ **Qt Designer .ui Files** - Professional UI definition
 - ✅ **Modular Structure** - Easy to extend
@@ -106,6 +111,7 @@ SudokuSolverGui/
 ## 🏗️ Building
 
 ### Prerequisites
+
 - macOS 12+ / Ubuntu 20.04+ / Windows 10+
 - CMake 4.1 or later
 - Qt6 with development files
@@ -116,16 +122,19 @@ SudokuSolverGui/
 ### Install Dependencies
 
 **macOS (Homebrew):**
+
 ```bash
 brew install cmake qt6 googletest doxygen
 ```
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt-get install cmake qt6-base-dev libgtest-dev doxygen
 ```
 
 **Windows (MSVC):**
+
 ```cmd
 # Install via vcpkg or download pre-built binaries
 vcpkg install cmake qt6:x64-windows googletest:x64-windows
@@ -134,16 +143,19 @@ vcpkg install cmake qt6:x64-windows googletest:x64-windows
 ### Build Instructions
 
 **1. Clone and enter project:**
+
 ```bash
 cd /Users/akifaydin/CLionProjects/SudokuSolverGui
 ```
 
 **2. Create build directory:**
+
 ```bash
 mkdir build && cd build
 ```
 
 **3. Configure with CMake:**
+
 ```bash
 # Debug build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
@@ -153,12 +165,14 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
 
 **4. Compile:**
+
 ```bash
 make -j$(nproc)    # Linux/macOS
 cmake --build .    # All platforms
 ```
 
 ### Build Output
+
 ```
 build/
 ├── SudokuSolverGui           # Main executable
@@ -171,11 +185,13 @@ build/
 ## 🚀 Running
 
 ### Run Main Application
+
 ```bash
 ./SudokuSolverGui
 ```
 
 ### Run Unit Tests (if Google Test available)
+
 ```bash
 ./SudokuSolverGui_tests
 
@@ -184,6 +200,7 @@ ctest --verbose
 ```
 
 ### Build and Run in One Command
+
 ```bash
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -195,6 +212,7 @@ make -j$(nproc) && ./SudokuSolverGui
 ## 🧪 Testing
 
 ### Available Tests
+
 - `SolveSolvablePuzzle` - Basic solving
 - `SolveWithSteps` - Step-by-step solving
 - `UnsolvablePuzzleDetection` - Invalid puzzle handling
@@ -205,11 +223,13 @@ make -j$(nproc) && ./SudokuSolverGui
 - `GivenCellMarking` - Cell marking
 
 ### Run Specific Test
+
 ```bash
 ./SudokuSolverGui_tests --gtest_filter="SudokuTest.SolveSolvablePuzzle"
 ```
 
 ### With Verbose Output
+
 ```bash
 ctest --verbose
 ```
@@ -219,6 +239,7 @@ ctest --verbose
 ## 📚 Documentation
 
 ### Generate Doxygen Documentation
+
 ```bash
 cd /Users/akifaydin/CLionProjects/SudokuSolverGui
 doxygen Doxyfile
@@ -228,12 +249,14 @@ open build/docs/html/index.html
 ```
 
 ### Code Comments
+
 - **100% English** - All comments in English
 - **Doxygen Markup** - All classes and methods documented
 - **Inline Comments** - Complex algorithms explained
 - **Parameter Docs** - All parameters documented
 
 ### Available Documentation Files
+
 - `README.md` - This file
 - `PROJECT_ANALYSIS.md` - Detailed project analysis
 - `IMPROVEMENTS_APPLIED.md` - Applied optimizations
@@ -244,6 +267,7 @@ open build/docs/html/index.html
 ## 🏗️ Architecture
 
 ### Design Pattern: MVC
+
 ```
 Model (Logic):         Sudoku class
 View (UI):            SudokuGrid + SudokuCell
@@ -251,6 +275,7 @@ Controller (Events):  MainWindow
 ```
 
 ### Data Flow
+
 ```
 User Input (Keyboard/Mouse)
         ↓
@@ -268,12 +293,14 @@ Visual Update
 ### Key Components
 
 #### **Sudoku.hpp/cpp**
+
 - Backtracking algorithm O(9^k)
 - Two solving modes: fast & animated
 - Constraint validation
 - Type aliases for clarity
 
 #### **SudokuGrid.hpp/cpp**
+
 - 9x9 cell management
 - Keyboard navigation
 - Mouse selection
@@ -281,12 +308,14 @@ Visual Update
 - 506×506 optimal size
 
 #### **SudokuCell.hpp/cpp**
+
 - Custom widget rendering
 - 6 cell states (Empty, Given, UserInput, Solved, etc.)
 - Color-coded display
 - Font caching optimization
 
 #### **MainWindow.hpp/cpp**
+
 - Event handling (buttons, keyboard)
 - Animation management
 - Puzzle selection
@@ -297,6 +326,7 @@ Visual Update
 ## ⚡ Performance
 
 ### Metrics
+
 - **Animation:** 60 FPS (16ms per frame)
 - **Click Response:** 1-2ms
 - **Typical Solve:** < 500ms
@@ -304,28 +334,30 @@ Visual Update
 - **Binary Size:** 3-4 MB (Release)
 
 ### Optimizations Applied
+
 1. **Compiler Level**
-   - `-O3` aggressive optimization
-   - `-march=native` CPU-specific
-   - `-flto` link-time optimization
+    - `-O3` aggressive optimization
+    - `-march=native` CPU-specific
+    - `-flto` link-time optimization
 
 2. **Code Level**
-   - Font caching (static QFont)
-   - Batch UI updates
-   - Vector reserve() for capacity
-   - Efficient grid calculations
+    - Font caching (static QFont)
+    - Batch UI updates
+    - Vector reserve() for capacity
+    - Efficient grid calculations
 
 3. **Qt Level**
-   - Antialiasing disabled (performance)
-   - Opaque paint events
-   - Efficient layouts
-   - Signal optimization
+    - Antialiasing disabled (performance)
+    - Opaque paint events
+    - Efficient layouts
+    - Signal optimization
 
 ---
 
 ## 🎯 Code Quality
 
 ### Metrics
+
 ```
 Total Lines:           ~1,100 lines
 Classes:               4 main classes
@@ -338,6 +370,7 @@ Test Coverage:         8 comprehensive tests
 ```
 
 ### Standards Compliance
+
 - ✅ Modern C++23
 - ✅ RAII principles
 - ✅ Const correctness
@@ -348,6 +381,7 @@ Test Coverage:         8 comprehensive tests
 - ✅ Type safe conversions
 
 ### Build Quality
+
 ```
 Compilation Status:    ✅ Success
 Errors:               ✅ 0
@@ -361,6 +395,7 @@ Strict Flags:         -Wall -Wextra -Wpedantic -Wconversion
 ## 🔧 Development
 
 ### Code Style
+
 - **Naming:** `camelCase` for variables, `PascalCase` for classes
 - **Indentation:** 4 spaces
 - **Comments:** English, clear and concise
@@ -389,10 +424,10 @@ Strict Flags:         -Wall -Wextra -Wpedantic -Wconversion
    ```
 
 3. **Add Doxygen comments**
-   - `@class` for class documentation
-   - `@param` for parameters
-   - `@return` for return values
-   - `@details` for implementation details
+    - `@class` for class documentation
+    - `@param` for parameters
+    - `@return` for return values
+    - `@details` for implementation details
 
 4. **Update CMakeLists.txt**
    ```cmake
@@ -407,6 +442,7 @@ Strict Flags:         -Wall -Wextra -Wpedantic -Wconversion
 ## 📦 Deployment
 
 ### macOS App Bundle
+
 ```bash
 mkdir -p SudokuSolver.app/Contents/MacOS
 cp build/SudokuSolverGui SudokuSolver.app/Contents/MacOS/
@@ -414,12 +450,14 @@ macdeployqt SudokuSolver.app
 ```
 
 ### Linux AppImage
+
 ```bash
 # Requires appimagetool
 appimagetool build/ SudokuSolver.AppImage
 ```
 
 ### Windows Installer
+
 ```batch
 REM Requires NSIS or similar
 cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -440,6 +478,7 @@ This is a personal project, but contributions are welcome!
 5. **Create** Pull Request
 
 ### Code Standards
+
 - Must pass all tests
 - Zero compiler warnings
 - 100% Doxygen documentation
@@ -488,20 +527,24 @@ copies or substantial portions of the Software.
 ## 🎓 Learning Resources
 
 ### Sudoku Algorithm
+
 - Backtracking: O(9^k) complexity where k = empty cells
 - See `Sudoku::solveRecursive()` for implementation
 
 ### Qt6 Development
+
 - [Qt Documentation](https://doc.qt.io/)
 - [Qt Designer](https://doc.qt.io/qt-6/qtdesigner-manual.html)
 - Custom widgets in `SudokuGrid` and `SudokuCell`
 
 ### Modern C++
+
 - [cppreference.com](https://en.cppreference.com/)
 - Smart pointers: `std::unique_ptr`
 - RAII principles: See `MainWindow` constructor
 
 ### CMake
+
 - [CMake Documentation](https://cmake.org/documentation/)
 - Modern CMake practices: See `CMakeLists.txt`
 - Qt integration: `find_package(Qt6)`
@@ -549,7 +592,7 @@ Performance:
 ✅ Comprehensive documentation  
 ✅ Zero technical debt  
 ✅ Production-ready code  
-✅ Optimal performance  
+✅ Optimal performance
 
 **Status: PRODUCTION READY - Deploy with confidence!** 🚀
 
