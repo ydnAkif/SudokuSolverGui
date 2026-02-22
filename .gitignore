@@ -1,0 +1,46 @@
+# Build directories
+build/
+cmake-build-debug/
+cmake-build-release/
+CMakeFiles/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# CMake
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Qt generated files
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+*.qm
+
+# Object files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Doxygen
+docs/html/
+docs/latex/
+Doxyfile
+
+# Test artifacts
+*.gcov
+*.gcda
+*.gcno
+

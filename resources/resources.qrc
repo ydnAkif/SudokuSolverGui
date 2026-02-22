@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RCC>
+    <!-- Resimler / İkonlar (gelecekte kullanılacak) -->
+    <qresource prefix="/icons">
+        <!-- Henüz boş - icons eklenebilir (PNG, SVG, vb.) -->
+        <!-- Örnek: <file>icon.png</file> -->
+    </qresource>
+
+    <!-- Stiller / Temalar (gelecekte kullanılacak) -->
+    <qresource prefix="/styles">
+        <!-- Henüz boş - QSS stylesheet dosyaları eklenebilir -->
+        <!-- Örnek: <file>dark.qss</file> -->
+    </qresource>
+
+    <!-- Veriler / Assets -->
+    <qresource prefix="/data">
+        <!-- Henüz boş - JSON, XML, vb. veri dosyaları -->
+    </qresource>
+</RCC>
+
